@@ -113,8 +113,8 @@
         "Excel"
       ],
       "disciplines": "Nonlinear FEA · Material characterization · Validation",
-      "image": "midsole",
-      "image_alt": "Concept illustration of three separated midsole layers, with a blue surface mesh",
+      "image": "company-nike",
+      "image_alt": "NIKE logo",
       "material": "11 foam materials",
       "analysis": "Nonlinear / explicit",
       "testing": "22 compression curves",
@@ -189,7 +189,12 @@
       "result_text": "The result was an expandable engineering reference that made foam-package comparisons repeatable and easier to communicate. The selected mesh retained the study’s response accuracy while reducing iteration time.",
       "learning": "The useful output is not simply a successful simulation. It is a comparison an engineer can act on. Working between the test lab, the models, and the product team taught me to connect numerical fidelity with the decisions the tool was meant to support.",
       "sort_date": "2026-08",
-      "project_type": "Internship project"
+      "project_type": "Internship project",
+      "image_ext": "svg",
+      "image_width": 64,
+      "image_height": 22,
+      "company_logo": "nike",
+      "media_caption": "NIKE brand mark."
     },
     {
       "slug": "reaction-wheel",
@@ -300,7 +305,7 @@
         "Profinet"
       ],
       "disciplines": "Manufacturing controls / HMI / System integration",
-      "image": null,
+      "image": "company-tesla",
       "diagram": "automation",
       "material": "Production controls",
       "analysis": "Logic and interface integration",
@@ -373,7 +378,13 @@
       ],
       "result_text": "The work improved the consistency of operator-facing information and enabled real-time crane-position visibility, with reported savings exceeding $50,000.",
       "learning": "A control system needs to be understandable at the point of use. Consistent interfaces and clear equipment state help turn the underlying logic into something useful for operators.",
-      "number": "04"
+      "number": "04",
+      "image_ext": "svg",
+      "image_alt": "Tesla logo",
+      "image_width": 24,
+      "image_height": 24,
+      "company_logo": "tesla",
+      "media_caption": "Tesla brand mark."
     },
     {
       "slug": "scan-mirror-gse",
@@ -389,8 +400,8 @@
         "GD&T"
       ],
       "disciplines": "Mechanism design · FEA · Tolerance & alignment",
-      "image": "mirror",
-      "image_alt": "Concept illustration of an exploded precision mirror mount and machined support hardware",
+      "image": "company-jpl",
+      "image_alt": "NASA / Jet Propulsion Laboratory / Caltech logo",
       "material": "Precision hardware",
       "analysis": "Displacement-driven FEA",
       "testing": "Design evaluation",
@@ -465,7 +476,12 @@
       "result_text": "The most important outcome was recognizing the interface-load risk early and changing the design direction. The engineering decision prioritized the behavior of the complete assembly.",
       "learning": "A flexible component can still produce harmful loads at its constraints. I learned to inspect reactions and moments, question the assumed load path, and change the architecture when geometry optimization alone would not solve the problem.",
       "sort_date": "2025-08",
-      "project_type": "Internship project"
+      "project_type": "Internship project",
+      "image_ext": "png",
+      "image_width": 724,
+      "image_height": 136,
+      "company_logo": "jpl",
+      "media_caption": "NASA / Jet Propulsion Laboratory / Caltech brand mark."
     },
     {
       "slug": "collimator-study",
@@ -485,7 +501,7 @@
       "image_width": 946,
       "image_height": 730,
       "actual_image": true,
-      "media_caption": "Original SolidWorks lens mount from Rafael’s collimator study.",
+      "media_caption": "Original SolidWorks lens mount from my collimator study.",
       "material": "N-BK7 lens / custom mount",
       "analysis": "Optical tilt and separate static FEA",
       "testing": "Simulation study",
@@ -578,7 +594,7 @@
         "Carbon 3D printing"
       ],
       "disciplines": "Reverse engineering · Prototyping · Drawings",
-      "image": null,
+      "image": "company-sorenson",
       "diagram": "reel",
       "material": "Manufacturing reel components",
       "analysis": "Assembly & process tradeoffs",
@@ -654,7 +670,13 @@
       "result_text": "The work connected reverse engineering with a revised component architecture, physical prototypes, and a documented design package.",
       "learning": "A replacement part is part of a process. Designing around assembly and heat-treatment handling helped me see manufacturability as an input from the beginning, not a check at the end.",
       "sort_date": "2024-09",
-      "project_type": "Internship project"
+      "project_type": "Internship project",
+      "image_ext": "svg",
+      "image_alt": "Sorenson Engineering logo",
+      "image_width": 523,
+      "image_height": 88,
+      "company_logo": "sorenson",
+      "media_caption": "Sorenson Engineering brand mark."
     },
     {
       "slug": "tesla-equipment",
@@ -670,7 +692,7 @@
         "Vision systems"
       ],
       "disciplines": "Equipment engineering · Automation · Controls",
-      "image": null,
+      "image": "company-tesla",
       "diagram": "automation",
       "material": "Production equipment",
       "analysis": "Controls & integration",
@@ -746,7 +768,13 @@
       "result_text": "The experience built a practical connection between mechanical equipment and the controls that operate it, with verification tied to the particular task.",
       "learning": "Reliable automation depends on the interfaces. Lighting affects sensing, mechanical behavior affects sequencing, and operator needs affect how a control system should be presented.",
       "sort_date": "2023-12",
-      "project_type": "Internship project"
+      "project_type": "Internship project",
+      "image_ext": "svg",
+      "image_alt": "Tesla logo",
+      "image_width": 24,
+      "image_height": 24,
+      "company_logo": "tesla",
+      "media_caption": "Tesla brand mark."
     },
     {
       "slug": "outseam-flare-jeans",
@@ -782,9 +810,9 @@
       "role": "Designer & Maker",
       "project_type": "Personal project",
       "metric": "0.5 in",
-      "metric_label": "confirmed seam allowance",
+      "metric_label": "seam allowance",
       "analysis_diagram": "softgoods",
-      "media_caption": "Original project photograph supplied by Rafael.",
+      "media_caption": "Original project photograph.",
       "softgoods_kind": "outseam",
       "problem": [
         "I wanted a more pronounced flared silhouette while keeping the original waist and upper fit of an existing pair of jeans.",
@@ -801,7 +829,7 @@
         ],
         [
           "Seam allowance",
-          "0.5 in, confirmed."
+          "0.5 in."
         ],
         [
           "Finish",
@@ -819,9 +847,9 @@
         ]
       ],
       "analysis_text": [
-        "The original dimensions were not recorded. The following is an illustrative pattern reconstruction for roughly 28 × 30 men’s jeans, not a measurement of the photographed garment. The 0.5-inch seam allowance is confirmed by Rafael.",
-        "Example finished geometry: a 16 in insert height and 6 in width at the hem seam line. Starting from a hypothetical 7.5 in laid-flat hem width (15 in circumference), one 6 in insert per leg would give approximately 10.5 in laid-flat width (21 in circumference).",
-        "For a symmetric triangle, offset each sloping stitch line outward by 0.5 in and add 0.5 in at the hem. A mitered offset of this illustrative triangle is about 7.21 in wide by 19.21 in high at the cut outline; the sharp tip can be truncated for construction. This is an example pattern, not recovered historical cutting dimensions."
+        "Pattern dimensions below are estimates; seam allowance is 0.5 in.",
+        "Finished insert geometry: 16 in height and 6 in width at the hem seam line. Starting from a 7.5 in laid-flat hem width (15 in circumference), one 6 in insert per leg increases the finished laid-flat width to approximately 10.5 in (21 in circumference).",
+        "Offset each sloping stitch line and the hem by 0.5 in. The mitered cut outline is approximately 7.21 in wide and 19.21 in high. Truncate the sharp tip as needed for construction."
       ],
       "design": [
         "The triangular insert introduces additional width gradually, concentrating the silhouette change at the lower leg.",
@@ -829,7 +857,7 @@
       ],
       "build": [
         "The photos show material planning, a cardboard template, the laid-flat assembly, and the finished jeans worn.",
-        "The final wear photo documents the resulting flare. Original before-and-after hem measurements were not recorded."
+        "The final wear photo shows the resulting flare and drape."
       ],
       "results": [
         [
@@ -838,7 +866,7 @@
         ],
         [
           "0.5 in",
-          "confirmed seam allowance"
+          "seam allowance"
         ],
         [
           "Retained",
@@ -882,9 +910,9 @@
       "role": "Designer & Maker",
       "project_type": "Personal project",
       "metric": "0.5 in",
-      "metric_label": "confirmed seam allowance",
+      "metric_label": "seam allowance",
       "analysis_diagram": "softgoods",
-      "media_caption": "Original project photograph supplied by Rafael.",
+      "media_caption": "Original project photograph.",
       "softgoods_kind": "inseam",
       "problem": [
         "For this pair, I added material at the inseams instead of the outseams to change where the lower-leg volume developed.",
@@ -901,7 +929,7 @@
         ],
         [
           "Seam allowance",
-          "0.5 in, confirmed."
+          "0.5 in."
         ],
         [
           "Fit",
@@ -919,17 +947,16 @@
         ]
       ],
       "analysis_text": [
-        "The original dimensions were not recorded. The following is an illustrative pattern reconstruction for roughly 28 × 30 men’s jeans, not a measurement of the photographed garment. The 0.5-inch seam allowance is confirmed by Rafael.",
-        "Example finished geometry: a 14 in insert height with a 4 in hem width at the stitch line. From a hypothetical 8 in laid-flat opening (16 in circumference), adding one 4 in panel per leg would produce approximately 10 in laid-flat width (20 in circumference).",
-        "Offset the two sloping stitch lines and hem by the confirmed 0.5 in seam allowance. A mitered offset of this illustrative triangle is approximately 5.15 in wide by 18.04 in high at the cut outline; truncate the needle-like tip as needed. These example values do not describe measured before-and-after results."
+        "Pattern dimensions below are estimates; seam allowance is 0.5 in.",
+        "Finished insert geometry: 14 in height and 4 in width at the hem seam line. Starting from an 8 in laid-flat opening (16 in circumference), one 4 in panel per leg increases the finished laid-flat width to approximately 10 in (20 in circumference).",
+        "Offset both sloping stitch lines and the hem by 0.5 in. The mitered cut outline is approximately 5.15 in wide and 18.04 in high. Truncate the sharp tip as needed for construction."
       ],
       "design": [
         "The inseam panel increases the available fabric toward the hem while retaining the garment’s outside seam.",
         "Matching the two inserts helps the added volume read consistently when the jeans are worn."
       ],
       "build": [
-        "The photographs show the original silhouette, the opened inseams with insert material positioned, and the finished jeans.",
-        "The original dimensions were not recorded, so the case study separates photographic evidence from illustrative pattern dimensions."
+        "The photographs show the original silhouette, the opened inseams with insert material positioned, and the finished jeans."
       ],
       "results": [
         [
@@ -938,7 +965,7 @@
         ],
         [
           "0.5 in",
-          "confirmed seam allowance"
+          "seam allowance"
         ],
         [
           "Reused",
@@ -983,7 +1010,7 @@
       "metric": "Retained",
       "metric_label": "original pocket utility",
       "analysis_diagram": "softgoods",
-      "media_caption": "Original project photograph supplied by Rafael.",
+      "media_caption": "Original project photograph.",
       "softgoods_kind": "tote",
       "problem": [
         "I wanted to turn an existing pair of jeans into a practical bag while keeping the useful details already built into the garment.",
@@ -1019,7 +1046,7 @@
       ],
       "analysis_text": [
         "The design problem was primarily one of layout and construction: retain accessible pockets, form a usable opening, and connect the handles to the bag body.",
-        "The photographs show the completed tote from both sides. No capacity, dimensions, or load-test result was recorded, so those values are not claimed."
+        "The completed tote retains accessible pockets on both sides and two carry handles."
       ],
       "design": [
         "The finished tote keeps the recognizable waistband, belt loops, denim seams, and original pockets.",

@@ -19,7 +19,7 @@
     document.querySelectorAll('[data-count]').forEach(el=>counts.observe(el));
   }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
   const cursor=document.querySelector('.cursor-cross');
-  if(cursor&&matchMedia('(pointer:fine)').matches&&!reduce.matches){document.addEventListener('pointermove',e=>{cursor.style.transform=`translate(${e.clientX+14}px,${e.clientY+14}px)`;cursor.style.opacity='1';},{passive:true});document.addEventListener('pointerleave',()=>cursor.style.opacity='0');}
+  if(cursor&&matchMedia('(pointer:fine)').matches&&!reduce.matches){document.addEventListener('pointermove',e=>{cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px) translate(-50%,-50%)`;cursor.style.opacity='1';},{passive:true});document.addEventListener('pointerleave',()=>cursor.style.opacity='0');}
   if(!reduce.matches&&matchMedia('(pointer:fine)').matches){let pending=false;const pictures=[...document.querySelectorAll('.project-image:not(.actual-media) img')];window.addEventListener('scroll',()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pictures.forEach(img=>{const box=img.getBoundingClientRect();if(box.bottom>0&&box.top<innerHeight)img.style.setProperty('--parallax',`${Math.max(-7,Math.min(7,(box.top-innerHeight/2)*.012))}px`);});pending=false;});},{passive:true});}
   const canvas=document.getElementById('mesh');if(!canvas)return;
   const ctx=canvas.getContext('2d');if(!ctx)return;

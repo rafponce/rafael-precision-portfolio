@@ -71,15 +71,15 @@ def page(title,description,content,home=False):
  return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090b0e"><title>{esc(title)}</title><meta name="description" content="{esc(description,quote=True)}"><meta property="og:title" content="{esc(title,quote=True)}"><meta property="og:description" content="{esc(description,quote=True)}"><meta property="og:type" content="website"><link rel="icon" type="image/svg+xml" href="/assets/portfolio/favicon.svg"><link rel="stylesheet" href="/assets/portfolio/style.css"><script src="/assets/portfolio/site.js" defer></script></head><body>{nav(home)}{content}{footer()}<div class="cursor-cross" aria-hidden="true"></div></body></html>'''
 def visual(p,case=False):
  if p['image']:
-  return f'<img src="/assets/portfolio/{p["image"]}.webp" alt="{esc(p["image_alt"])}" width="{p.get("image_width",1536)}" height="{p.get("image_height",1024)}" loading="{"eager" if case else "lazy"}" decoding="async">'
+  return f'<img src="/assets/portfolio/{p["image"]}.{p.get("image_ext","webp")}" alt="{esc(p["image_alt"])}" width="{p.get("image_width",1536)}" height="{p.get("image_height",1024)}" loading="{"eager" if case else "lazy"}" decoding="async">'
  return '<div class="diagram-card">'+diagram(p['diagram'])+'</div>'
 
 def project_card(p,featured=False):
  specs=f'<dl class="hover-spec"><dt>MATERIAL</dt><dd>{esc(p["material"])}</dd><dt>ANALYSIS</dt><dd>{esc(p["analysis"])}</dd><dt>TOOLS</dt><dd>{esc(p["tools"][0])}</dd><dt>TESTING</dt><dd>{esc(p["testing"])}</dd><dt>STATUS</dt><dd>{esc(p["status"])}</dd></dl>'
- image_label='PROJECT PHOTOGRAPH' if p.get('photo') else 'PROJECT CAD' if p.get('actual_image') else 'AI CONCEPT ILLUSTRATION' if p['image'] else 'TECHNICAL OVERVIEW'
+ image_label='COMPANY LOGO' if p.get('company_logo') else 'PROJECT PHOTOGRAPH' if p.get('photo') else 'PROJECT CAD' if p.get('actual_image') else 'AI CONCEPT ILLUSTRATION' if p['image'] else 'TECHNICAL OVERVIEW'
  result=f'<div class="project-result"><strong>{esc(p["metric"])}</strong><span>{esc(p["metric_label"])}</span></div>' if featured else ''
  mini='' if featured else f'<span class="mini-result">{esc(p["metric"])} {esc(p["metric_label"])}</span>'
- media_class='actual-media' if p.get('actual_image') else 'photo-media' if p.get('photo') else ''
+ media_class=('company-media company-'+p['company_logo']) if p.get('company_logo') else 'actual-media' if p.get('actual_image') else 'photo-media' if p.get('photo') else ''
  return f'''<article class="project-card {'featured' if featured else ''} reveal" data-project="{p['slug']}" data-sort-date="{p.get('sort_date') or ''}"><div class="project-image {media_class}">{visual(p)}<div class="image-top mono"><span>PROJECT / {p['number']}</span><span>{p['date'].upper()}</span></div><div class="image-bottom">{image_label}</div>{specs}</div><div class="project-body"><div class="project-type">{esc(p['project_type'])}</div><div class="project-kicker">{esc(p['company'])} / {esc(p['category'])}</div><h3>{esc(p['title'])}</h3><p>{esc(p['challenge'])}</p>{tags(p['tools'])}{result}<div class="project-footer"><a class="text-link" href="/projects/{p['slug']}/">View Case Study</a>{mini}</div></div></article>'''
 
 def project_collection():
@@ -109,6 +109,9 @@ def photo_gallery(p):
  out='<div class="photo-gallery">'
  for i in p['gallery']:
   top,h=crops[i]
+  if i==5:
+   out+=f'<figure><a class="photo-window" href="/assets/portfolio/softgoods-5-cropped.svg" target="_blank" rel="noopener" style="aspect-ratio:709/{h}" aria-label="Open full-size photo: {captions[i]}"><img src="/assets/portfolio/softgoods-5-cropped.svg" alt="{captions[i]}" width="709" height="884" loading="lazy" style="height:100%;object-fit:contain"></a><figcaption>{captions[i]}</figcaption></figure>'
+   continue
   out+=f'<figure><a class="photo-window" href="/assets/portfolio/softgoods-{i}.webp" target="_blank" rel="noopener" style="aspect-ratio:709/{h}" aria-label="Open full-size photo: {captions[i]}"><img src="/assets/portfolio/softgoods-{i}.webp" alt="{captions[i]}" width="709" height="1536" loading="lazy" style="transform:translateY(-{100*top/1536:.4f}%)"></a><figcaption>{captions[i]}</figcaption></figure>'
  return out+'</div>'
 
@@ -127,17 +130,17 @@ def case_page(p,next_p):
  design=paras(p['design'])
  if p['slug']=='reaction-wheel':design+=evidence('tumbler-wiring','Project Tumbler wiring schematic showing controller, IMU and four motors','Senior-design wiring schematic, Final Design Report, Figure 2.',866,654)
  elif p['slug']=='collimator-study':design+=evidence('collimator-cad',p['image_alt'],'Original SolidWorks mount CAD for the 25 mm lens.',946,730)
- elif p['image'] and not p.get('photo'):design+=f'<figure class="case-visual">{visual(p)}<figcaption>AI-generated concept illustration, not original company CAD or simulation output.</figcaption></figure>'
+ elif p['image'] and not p.get('photo') and not p.get('company_logo'):design+=f'<figure class="case-visual">{visual(p)}<figcaption>AI-generated concept illustration, not original company CAD or simulation output.</figcaption></figure>'
  results=f'<p>{esc(p["result_text"])}</p><div class="result-grid">'+''.join(f'<div class="result-block"><b>{esc(a)}</b><span>{esc(b)}</span></div>' for a,b in p['results'])+'</div>'
  build_content=paras(p['build'])
  if p['slug']=='reaction-wheel':build_content+=evidence('tumbler-yaw','Measured wrapped-yaw response to disturbances','Senior-design test response. Final Design Report, Figure 8. The yaw trace wraps at 360°.',751,457)
  if p.get('gallery'):build_content+=photo_gallery(p)
- sections=[('problem','Problem',paras(p['problem'])),('requirements','Requirements',specs),('concepts','Concepts',concepts),('analysis','Pattern Reconstruction' if p.get('softgoods_kind') in ('outseam','inseam') else 'Engineering Analysis',analysis),('design','Design',design),('build-test','Build / Test',build_content),('results','Results',results),('reflection','What I Learned',f'<p>{esc(p["learning"])}</p>')]
+ sections=[('problem','Problem',paras(p['problem'])),('requirements','Requirements',specs),('concepts','Concepts',concepts),('analysis','Pattern Geometry' if p.get('softgoods_kind') in ('outseam','inseam') else 'Engineering Analysis',analysis),('design','Design',design),('build-test','Build / Test',build_content),('results','Results',results),('reflection','What I Learned',f'<p>{esc(p["learning"])}</p>')]
  navlinks=''.join(f'<a href="#{slug}">{i+1:02d} {name}</a>' for i,(slug,name,_) in enumerate(sections))
  body=''.join(f'<section class="case-section reveal" id="{slug}"><header><div class="eyebrow">{i+1:02d}</div><h2>{name}</h2></header><div class="case-content">{content}</div></section>' for i,(slug,name,content) in enumerate(sections))
  media_note=p.get('media_caption') or ('AI-generated concept illustration, not original company CAD or measured analysis.' if p['image'] else 'Engineering concept diagram. Project status and test evidence are described below.')
  date=esc(p['date'])+('<br><small>'+esc(p['date_note'])+'</small>' if p.get('date_note') else '')
- content=f'''<main id="main"><header class="case-hero wrap"><a class="back-link" href="/#work">BACK TO SELECTED WORK</a><div class="eyebrow">{esc(p['company'])} / CASE STUDY {p['number']}</div><h1>{esc(p['title'])}</h1><p class="case-intro">{esc(p['challenge'])}</p><dl class="case-meta"><div><dt>Project type</dt><dd>{esc(p['project_type'])}</dd></div><div><dt>Role</dt><dd>{esc(p['role'])}</dd></div><div><dt>Timeline</dt><dd>{date}</dd></div><div><dt>Disciplines</dt><dd>{esc(p['disciplines'])}</dd></div><div><dt>Status</dt><dd>{esc(p['status'])}</dd></div></dl></header><div class="wrap"><figure class="case-visual {'photo-hero' if p.get('photo') else ''}">{visual(p,True)}<figcaption>{media_note}</figcaption></figure><nav class="case-nav" aria-label="Case study sections">{navlinks}</nav>{body}<a class="next-project" href="/projects/{next_p['slug']}/"><div><span class="mono blue">NEXT CASE STUDY / {next_p['number']}</span><h2>{esc(next_p['title'])}</h2></div></a></div></main>'''
+ content=f'''<main id="main"><header class="case-hero wrap"><a class="back-link" href="/#work">BACK TO SELECTED WORK</a><div class="eyebrow">{esc(p['company'])} / CASE STUDY {p['number']}</div><h1>{esc(p['title'])}</h1><p class="case-intro">{esc(p['challenge'])}</p><dl class="case-meta"><div><dt>Project type</dt><dd>{esc(p['project_type'])}</dd></div><div><dt>Role</dt><dd>{esc(p['role'])}</dd></div><div><dt>Timeline</dt><dd>{date}</dd></div><div><dt>Disciplines</dt><dd>{esc(p['disciplines'])}</dd></div><div><dt>Status</dt><dd>{esc(p['status'])}</dd></div></dl></header><div class="wrap"><figure class="case-visual {('company-hero company-'+p['company_logo']) if p.get('company_logo') else 'photo-hero' if p.get('photo') else ''}">{visual(p,True)}<figcaption>{media_note}</figcaption></figure><nav class="case-nav" aria-label="Case study sections">{navlinks}</nav>{body}<a class="next-project" href="/projects/{next_p['slug']}/"><div><span class="mono blue">NEXT CASE STUDY / {next_p['number']}</span><h2>{esc(next_p['title'])}</h2></div></a></div></main>'''
  return page(p['title']+' — Rafael Ponce De Leon',p['challenge'],content)
 
 def timeline_page():

@@ -22,7 +22,7 @@ The Nike figures of 70+ simulations, 22 test curves, and 11 materials come from 
 
 The supplied professional portrait is used in the About section. The April 2025 Zemax study uses original figures from the supplied PDF. The three softgoods case studies use all nine supplied images in their specified groups. Exact completion months were not recorded, so they are listed as 2024–2025 in a separate personal-project collection. The pants pattern dimensions are explicitly illustrative reconstructions; only the 0.5-inch seam allowance is confirmed.
 
-The user requested synchronization with `rafponce/rafael-precision-portfolio`. That repository returned 404 through the current GitHub connection during this update, so remote synchronization could not be performed. The existing `rafponce.github.io` repository was not substituted.
+The public portfolio source is maintained in `rafponce/rafael-precision-portfolio`. GitHub Pages uses the same canonical content with deployment-only URL prefixes.
 
 ## Image provenance
 
@@ -38,3 +38,12 @@ The user requested synchronization with `rafponce/rafael-precision-portfolio`. T
 Semantic headings, landmarks, skip link, keyboard-focus indicators, accessible mobile menu, descriptive image alternatives, and reduced-motion support are included. Animation can be paused, stops when offscreen or the page is hidden, and limits pixel density and frame rate. Images use WebP, explicit dimensions, and lazy loading. Content and navigation remain readable without JavaScript.
 
 Validation performed: Python generation, JavaScript syntax, every generated route, local asset reference, internal anchor, unique element IDs, one main heading per page, and image alternative text. Browser screenshot/interaction QA was unavailable for this static deployment path and should be checked in the delivered site at desktop and mobile sizes.
+
+## Company visuals and photo crop
+
+- Nike: official swoosh extracted from https://www.nike.com/
+- NASA JPL: https://science.jpl.nasa.gov/static/images/logo_nasa_trio_white@2x.c9ae60922728.png
+- Tesla: Simple Icons, https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tesla.svg
+- Sorenson Engineering: https://www.sorensoneng.com/img/sei-logo-footer-nomargin.svg
+- Original concept assets remain archived but are no longer rendered on internship project cards or case studies. Logos identify the internship employer, not authorship of company products.
+- The inseam preparation photo is displayed through an SVG crop viewport at x=0, y=296, width=709, height=884. It embeds the unchanged original photograph, retaining its pixels and excluding the feet.
