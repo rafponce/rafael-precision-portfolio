@@ -1,0 +1,1186 @@
+{
+  "contact": {
+    "github": "https://github.com/rafponce",
+    "resume": "https://drive.google.com/file/d/13Z3duVzh-gguPU5r03oJVEE6rV9rd3DS/view?usp=sharing",
+    "email": "rponc015@ucr.edu",
+    "linkedin": "https://www.linkedin.com/in/rafaelponcedeleon/",
+    "portrait": "/assets/portfolio/portrait.jpg"
+  },
+  "projects": [
+    {
+      "slug": "self-balancing-system",
+      "number": "01",
+      "company": "UCR / ME133",
+      "category": "In Development / Controls",
+      "title": "Self-Balancing IMU Control System",
+      "short": "An unstable system. A focused control challenge.",
+      "challenge": "Explore a compact body that can move onto an edge and maintain balance using inertial feedback.",
+      "tools": [
+        "Arduino UNO R4",
+        "IMU",
+        "Embedded controls"
+      ],
+      "disciplines": "Concept development · Dynamics · Embedded controls",
+      "image": null,
+      "diagram": "balance",
+      "material": "Architecture in development",
+      "analysis": "Proposed dynamics model",
+      "testing": "Not yet validated",
+      "status": "Concept / in development",
+      "date": "Fall 2026",
+      "role": "Course Project Developer",
+      "metric": "1 axis",
+      "metric_label": "proposed initial test scope",
+      "problem": [
+        "For ME133, I am exploring a small self-balancing cube or triangular body using an Arduino UNO R4 and an IMU. The eventual goal is to move onto a corner or edge and maintain balance.",
+        "The immediate engineering question is how to define a controllable first prototype before attempting the complete self-righting behavior. This case study is a project brief, not a completed result."
+      ],
+      "requirements": [
+        [
+          "Controller",
+          "Use the available Arduino UNO R4."
+        ],
+        [
+          "Sensing",
+          "Use the available IMU for attitude estimation."
+        ],
+        [
+          "Initial scope",
+          "Proposed one-axis balancing experiment."
+        ],
+        [
+          "Actuation",
+          "Motor, driver, and mechanism selection remain open."
+        ],
+        [
+          "Validation",
+          "Define repeatable recovery and stability tests before claiming success."
+        ]
+      ],
+      "concepts": [
+        [
+          "Cube architecture",
+          "Explore a compact body with internal actuation. Packaging, inertia, and available motor torque need to be evaluated."
+        ],
+        [
+          "Planar triangular architecture",
+          "Consider a simpler one-axis body to reduce the number of coupled variables during the initial controls experiment."
+        ]
+      ],
+      "analysis_text": [
+        "The planned analysis begins with a free-body diagram, center-of-mass location, gravitational moment, and available actuator torque. The actuation architecture has not yet been selected.",
+        "A useful first test will separate sensor estimation from control performance. Timing, bias, and motor saturation will need to be measured on the actual system."
+      ],
+      "analysis_diagram": "balance",
+      "design": [
+        "The mechanical design is still in development. The Arduino UNO R4 and IMU provide the starting point, while the frame, motor, driver, and power system remain design decisions.",
+        "A sensible proposed sequence is sensing first, constrained actuation second, and free balancing after the individual subsystems behave predictably."
+      ],
+      "build": [
+        "No completed prototype or measured balance performance is claimed here. The next milestone is a benchtop IMU and actuator check with documented sampling and response behavior.",
+        "The proposed test plan will measure attitude error, recovery time, and actuator saturation under repeatable disturbances. Numerical acceptance limits are still to be defined."
+      ],
+      "results": [
+        [
+          "Concept",
+          "current project status"
+        ],
+        [
+          "UNO R4",
+          "available controller"
+        ],
+        [
+          "Next",
+          "sensor & actuator test"
+        ]
+      ],
+      "result_text": "This is an active development brief. Results will be added after the corresponding hardware tests are complete.",
+      "learning": "The current design lesson is to narrow the first experiment. Demonstrating a well-instrumented one-axis response will provide more useful information than committing early to a complicated mechanism.",
+      "sort_date": "2026-09",
+      "project_type": "Academic project / in development"
+    },
+    {
+      "slug": "midsole-simulation",
+      "number": "02",
+      "company": "NIKE",
+      "category": "Simulation / Product Engineering",
+      "title": "Midsole Foam Performance Simulation Platform",
+      "short": "From material behavior to better product decisions.",
+      "challenge": "Make foam, thickness, and layer tradeoffs visible before committing to a physical midsole.",
+      "tools": [
+        "Abaqus / Explicit",
+        "Mechanical testing",
+        "Excel"
+      ],
+      "disciplines": "Nonlinear FEA · Material characterization · Validation",
+      "image": "midsole",
+      "image_alt": "Concept illustration of three separated midsole layers, with a blue surface mesh",
+      "material": "11 foam materials",
+      "analysis": "Nonlinear / explicit",
+      "testing": "22 compression curves",
+      "status": "Completed",
+      "date": "Jun–Aug 2026",
+      "role": "Footwear Product Creation Intern",
+      "metric": "70+",
+      "metric_label": "nonlinear simulations",
+      "problem": [
+        "A single hardness value cannot describe how an entire foam package responds through compression. Product engineers needed a way to compare materials, stack heights, and layer combinations using behavior relevant to a shoe.",
+        "I developed a simulation-driven performance library and an expandable Excel dashboard that connected nonlinear analysis with mechanical testing. The goal was to make tradeoffs in stiffness, bottoming-out, energy return, and cost easier to understand."
+      ],
+      "requirements": [
+        [
+          "Material coverage",
+          "11 foam materials, from softer to firmer responses."
+        ],
+        [
+          "Construction",
+          "Single-, double-, and triple-layer packages."
+        ],
+        [
+          "Stack height",
+          "10–40 mm configurations in the study."
+        ],
+        [
+          "Behavior",
+          "Force–displacement response, hysteresis, and energy efficiency."
+        ],
+        [
+          "Usability",
+          "Repeatable comparisons and automated plotting for product engineers."
+        ]
+      ],
+      "concepts": [
+        [
+          "Start with a baseline",
+          "Use soft, medium, and firm foams to establish a manageable comparison set before expanding the construction space."
+        ],
+        [
+          "Separate the variables",
+          "Compare material, thickness, and layer count deliberately, so a difference in response can be connected to a design decision."
+        ]
+      ],
+      "analysis_text": [
+        "I ran 70+ Abaqus Explicit nonlinear simulations using C3D10M elements. Large deformation, contact, and the foam response made the modeling choices consequential. The simulations were compared with physical compression behavior, rather than treated as a standalone answer.",
+        "A mesh study stepped from 4 mm to 2 mm, 1.5 mm, and 1 mm. I selected 2 mm: it stayed within 1.11% of the converged response while reducing runtime by approximately four times. The comparison was specific to this study, not a universal mesh prescription."
+      ],
+      "analysis_diagram": "mesh",
+      "design": [
+        "The library organizes materials and single- to multi-layer constructions behind an Excel interface. Automated force–displacement plots and secant-stiffness calculations allow engineers to compare packages at different stages of compression.",
+        "I divided the response into 0–25%, 25–50%, and 50–75% compression ranges. This makes it easier to see why a foam that feels compliant initially can behave differently as compression increases."
+      ],
+      "build": [
+        "Mechanical compression testing used a footform/last on the B140 system at 1 Hz. Bonded 200 × 200 × 20 mm foam slabs supported the baseline and layer comparisons.",
+        "The study integrated 22 test curves. I compared loading and unloading behavior, force–displacement response, and energy efficiency to understand where the models represented the physical tests and where further investigation was needed. The physical comparisons identified a material-model accuracy gap despite consistent relative trends across soft and firm constructions."
+      ],
+      "results": [
+        [
+          "70+",
+          "nonlinear simulations"
+        ],
+        [
+          "22",
+          "mechanical test curves"
+        ],
+        [
+          "11",
+          "foam materials"
+        ]
+      ],
+      "result_text": "The result was an expandable engineering reference that made foam-package comparisons repeatable and easier to communicate. The selected mesh retained the study’s response accuracy while reducing iteration time.",
+      "learning": "The useful output is not simply a successful simulation. It is a comparison an engineer can act on. Working between the test lab, the models, and the product team taught me to connect numerical fidelity with the decisions the tool was meant to support.",
+      "sort_date": "2026-08",
+      "project_type": "Internship project"
+    },
+    {
+      "slug": "reaction-wheel",
+      "number": "03",
+      "company": "UCR / SENIOR DESIGN",
+      "category": "Dynamics / Embedded Controls",
+      "title": "CubeSat Reaction Wheel Attitude Control System",
+      "short": "From control logic to physical motion.",
+      "challenge": "Build and test a reaction-wheel system that closes the loop between measured attitude and commanded motion.",
+      "tools": [
+        "PID control",
+        "IMU",
+        "PWM mixing"
+      ],
+      "disciplines": "Dynamics · Embedded controls · System testing",
+      "image": "tumbler-cad",
+      "image_alt": "Actual Project Tumbler CAD exploded assembly with four diagonally mounted wheels and gimbal support",
+      "actual_image": true,
+      "material": "Reaction-wheel assembly",
+      "analysis": "Closed-loop dynamics",
+      "testing": "Physical system tests",
+      "status": "Tested prototype",
+      "date": "Jan–May 2026",
+      "role": "Senior Design Team Member",
+      "metric": "~1.34°",
+      "metric_label": "minimum yaw error observed",
+      "problem": [
+        "A control algorithm has to work with the inertia, sensing, motor response, and disturbances of real hardware. Our senior design project combined a reaction-wheel assembly with closed-loop attitude control.",
+        "The four-wheel diagonal architecture used an Arduino UNO R4, a BNO085 IMU, Nidec brushless servo motors, encoder feedback, and 3D-printed and machined parts. Physical yaw and pitch control were demonstrated; full three-axis stabilization remained incomplete."
+      ],
+      "requirements": [
+        [
+          "Feedback",
+          "Use measured attitude to update motor commands."
+        ],
+        [
+          "Control",
+          "Implement closed-loop yaw, pitch, and roll logic."
+        ],
+        [
+          "Actuation",
+          "Mix PWM commands for the wheel system."
+        ],
+        [
+          "Safety",
+          "Include stop and brake behavior."
+        ],
+        [
+          "Verification",
+          "Observe commanded motion and disturbance recovery on hardware."
+        ]
+      ],
+      "concepts": [
+        [
+          "Separate the control functions",
+          "Organize sensor initialization, attitude error, controller output, motor mixing, and telemetry so each behavior can be understood."
+        ],
+        [
+          "Test the complete loop",
+          "Tune with the physical assembly and examine the measured response, rather than relying only on commanded output."
+        ]
+      ],
+      "analysis_text": [
+        "A reaction wheel exchanges angular momentum with its supporting body. Motor torque changes wheel momentum, producing an opposing torque on the structure.",
+        "The controller uses measured attitude error to command that exchange. Proportional, integral, and derivative behavior must be tuned with actuator limits, sensor behavior, and the actual test setup in mind."
+      ],
+      "analysis_diagram": "loop",
+      "design": [
+        "The four diagonally mounted wheels were supported by a gimbal-style test structure. IMU initialization and zeroing fed PID control, PWM mixing, and live telemetry. Stop and brake functions provided a way to interrupt the experiment.",
+        "The prototype was built as a demonstration and test platform. This portfolio does not present it as a flight-qualified attitude-control unit."
+      ],
+      "build": [
+        "Physical testing demonstrated 360° yaw control, approximately 15° pitch motion, and recovery from disturbances in the tested setup.",
+        "A minimum yaw error of approximately 1.34° was observed. That figure describes the reported test result, not a guaranteed accuracy across all attitudes or operating conditions."
+      ],
+      "results": [
+        [
+          "360°",
+          "yaw control demonstrated"
+        ],
+        [
+          "15°",
+          "pitch motion demonstrated"
+        ],
+        [
+          "~1.34°",
+          "minimum yaw error observed"
+        ]
+      ],
+      "result_text": "The prototype connected embedded control with observable hardware behavior. Telemetry and repeatable tests made it possible to evaluate the system beyond whether the wheels simply spun.",
+      "learning": "The complete loop matters. Sensor offsets, control gains, wheel response, and the mechanical setup all affect the behavior. Physical testing made the relationship between a control decision and the resulting motion much clearer.",
+      "sort_date": "2026-05",
+      "project_type": "Academic / senior design",
+      "media_caption": "Project Tumbler senior-design CAD, Final Design Report, Figure 1.",
+      "image_width": 1333,
+      "image_height": 855
+    },
+    {
+      "slug": "tesla-controls",
+      "company": "TESLA / AUSTIN",
+      "category": "Controls / Production Systems",
+      "title": "Manufacturing Controls & HMI Standardization",
+      "short": "Make production information easier to use.",
+      "challenge": "Standardize operator interfaces and bring equipment state into useful production displays.",
+      "tools": [
+        "PLC / HMI",
+        "Structured Text",
+        "Profinet"
+      ],
+      "disciplines": "Manufacturing controls / HMI / System integration",
+      "image": null,
+      "diagram": "automation",
+      "material": "Production controls",
+      "analysis": "Logic and interface integration",
+      "testing": "HMI and equipment checks",
+      "status": "Completed internship",
+      "date": "Sep–Dec 2025",
+      "sort_date": "2025-12",
+      "role": "Manufacturing Controls Engineering Intern",
+      "project_type": "Internship project",
+      "metric": "130+",
+      "metric_label": "HMIs supported by standardization",
+      "problem": [
+        "During my controls engineering internship in Paints & Coatings in Austin, I worked on the interfaces and logic operators use to understand production equipment.",
+        "The work combined HMI standardization, Structured Text data extraction, and hardware/network integration."
+      ],
+      "requirements": [
+        [
+          "Consistency",
+          "Standardize HMI behavior across 15 PLCs supporting 130+ HMIs."
+        ],
+        [
+          "Visibility",
+          "Improve operator fault visibility and equipment-position displays."
+        ],
+        [
+          "Data",
+          "Expose internal crane coordinate information in the HMI."
+        ],
+        [
+          "Integration",
+          "Support HMI installation and Profinet network connections."
+        ]
+      ],
+      "concepts": [
+        [
+          "Common interface conventions",
+          "Apply consistent display and fault information across the HMI installation."
+        ],
+        [
+          "Useful equipment data",
+          "Extract crane coordinate data and map it into a display operators can use."
+        ]
+      ],
+      "analysis_text": [
+        "I developed Structured Text logic to extract internal coordinate data for real-time crane-position viewing on the HMI.",
+        "HMI standardization required consistency across the PLCs and displays, while hardware work required attention to the configured network interfaces."
+      ],
+      "analysis_diagram": "automation",
+      "design": [
+        "I led HMI standardization across 15 PLCs supporting more than 130 HMIs, improving fault visibility for operators.",
+        "I also supported HMI hardware installations with technicians, including Profinet connections through Scalance and Cisco switches."
+      ],
+      "build": [
+        "The internship work covered interface standardization, crane-position data mapping, and HMI hardware installation.",
+        "The scope was controls and production-system integration in Austin during Fall 2025."
+      ],
+      "results": [
+        [
+          "15",
+          "PLCs in the standardization scope"
+        ],
+        [
+          "130+",
+          "HMIs supported"
+        ],
+        [
+          "$50k+",
+          "reported cost savings"
+        ]
+      ],
+      "result_text": "The work improved the consistency of operator-facing information and enabled real-time crane-position visibility, with reported savings exceeding $50,000.",
+      "learning": "A control system needs to be understandable at the point of use. Consistent interfaces and clear equipment state help turn the underlying logic into something useful for operators.",
+      "number": "04"
+    },
+    {
+      "slug": "scan-mirror-gse",
+      "number": "05",
+      "company": "NASA JPL",
+      "category": "Precision / Opto-Mechanical",
+      "title": "Precision Scan Mirror Ground Support Equipment",
+      "short": "Control the load. Protect the alignment.",
+      "challenge": "Accommodate assembly variation without imposing excessive reactions on a precision scan-mirror interface.",
+      "tools": [
+        "Siemens NX",
+        "NX Nastran",
+        "GD&T"
+      ],
+      "disciplines": "Mechanism design · FEA · Tolerance & alignment",
+      "image": "mirror",
+      "image_alt": "Concept illustration of an exploded precision mirror mount and machined support hardware",
+      "material": "Precision hardware",
+      "analysis": "Displacement-driven FEA",
+      "testing": "Design evaluation",
+      "status": "Design study completed",
+      "date": "Jun–Aug 2025",
+      "role": "Opto-Mechanical Engineering Intern",
+      "metric": "±5 mm",
+      "metric_label": "length variation addressed",
+      "problem": [
+        "At NASA JPL, I worked on scan-mirror ground support equipment for the SBG-TIR / OTTER effort. The central design problem was accommodating a length variation of approximately ±5 mm without introducing undesirable loads into sensitive hardware.",
+        "An initially promising compliant-flexure concept exposed a more important question: where do the reaction forces and moments go when the assembly is brought into position?"
+      ],
+      "requirements": [
+        [
+          "Accommodation",
+          "Address approximately ±5 mm of length variation."
+        ],
+        [
+          "Load path",
+          "Evaluate forces and moments transmitted to the mounting interfaces."
+        ],
+        [
+          "Integration",
+          "Provide a practical assembly approach for ground support hardware."
+        ],
+        [
+          "Analysis",
+          "Use displacement-driven structural analysis to compare concepts."
+        ],
+        [
+          "Precision",
+          "Consider tolerance and alignment alongside mechanical stiffness."
+        ]
+      ],
+      "concepts": [
+        [
+          "01 / Compliant flexure",
+          "Allow elastic deflection to accommodate assembly variation. Study the geometry and the resulting interface reactions."
+        ],
+        [
+          "02 / Three-piece torque bar",
+          "Pivot toward a segmented torque-bar arrangement for controlled torque and lower induced loads, informed by the flexure analysis."
+        ]
+      ],
+      "analysis_text": [
+        "I used Siemens NX and NX Nastran to evaluate the flexure concept, including an enforced-displacement load case. Reaction forces and moments at the bolt interfaces helped reveal the risk of transferring unwanted loads to the mirror hardware.",
+        "The key decision was to change the mechanism concept when the load path proved problematic. Optimizing a local feature would not, by itself, resolve the system-level interface concern."
+      ],
+      "analysis_diagram": "loadpath",
+      "design": [
+        "The work moved from a compliant-flexure concept toward a three-piece torque-bar design. The intent was to control applied torque and reduce the loads induced by assembly accommodation.",
+        "Related opto-mechanical work included precision alignment and assembly fixtures, NX modeling, and ISO 10110 optical drawings. These tasks reinforced the connection between the model, the drawing, and the physical assembly."
+      ],
+      "build": [
+        "This case study describes design and analysis work. It does not claim that the scan-mirror GSE was flight hardware or that the final torque-bar concept completed qualification testing.",
+        "Assembly feasibility and interface behavior guided the iterations. Detailed company drawings and original analysis outputs are not reproduced here."
+      ],
+      "results": [
+        [
+          "±5 mm",
+          "accommodation challenge"
+        ],
+        [
+          "2",
+          "mechanism concepts evaluated"
+        ],
+        [
+          "3-piece",
+          "torque-bar design direction"
+        ]
+      ],
+      "result_text": "The most important outcome was recognizing the interface-load risk early and changing the design direction. The engineering decision prioritized the behavior of the complete assembly.",
+      "learning": "A flexible component can still produce harmful loads at its constraints. I learned to inspect reactions and moments, question the assumed load path, and change the architecture when geometry optimization alone would not solve the problem.",
+      "sort_date": "2025-08",
+      "project_type": "Internship project"
+    },
+    {
+      "slug": "collimator-study",
+      "company": "INDEPENDENT STUDY",
+      "category": "Optical / Structural Simulation",
+      "title": "Optomechanical Collimator Misalignment Study",
+      "short": "Connect optical alignment with mechanical design.",
+      "challenge": "Explore image-position sensitivity to optical tilt and the stress response of a custom lens mount under asymmetric loading.",
+      "tools": [
+        "Zemax OpticStudio",
+        "SolidWorks",
+        "Static FEA"
+      ],
+      "disciplines": "Optical simulation / Mechanical design / Structural analysis",
+      "image": "collimator-cad",
+      "image_alt": "Original SolidWorks lens mount CAD for a 25 millimeter lens",
+      "image_width": 946,
+      "image_height": 730,
+      "actual_image": true,
+      "media_caption": "Original SolidWorks lens mount from Rafael’s collimator study.",
+      "material": "N-BK7 lens / custom mount",
+      "analysis": "Optical tilt and separate static FEA",
+      "testing": "Simulation study",
+      "status": "Completed simulation study",
+      "date": "Apr 2025",
+      "sort_date": "2025-04",
+      "role": "Independent Designer",
+      "project_type": "Personal project",
+      "metric": "2.65 mm",
+      "metric_label": "reported image-position shift at 1°",
+      "problem": [
+        "I wanted to understand how mechanical alignment decisions appear in an optical model. I built a basic single-lens collimator in Zemax and designed a corresponding lens mount in SolidWorks.",
+        "The study examined a 1° coordinate-break tilt in the optical setup and, separately, an asymmetric load on the mechanical mount."
+      ],
+      "requirements": [
+        [
+          "Lens",
+          "Single plano-convex N-BK7 lens, 25 mm diameter."
+        ],
+        [
+          "Optical cases",
+          "Aligned configuration and 1° coordinate-break tilt at Surface 2."
+        ],
+        [
+          "Fields",
+          "Object heights of 0, 1, and 2 mm."
+        ],
+        [
+          "Mount",
+          "Central lens bore with three mounting holes."
+        ],
+        [
+          "Structural case",
+          "Two bolt holes fixed; 10 N applied at the third."
+        ]
+      ],
+      "concepts": [
+        [
+          "Establish an optical reference",
+          "Compare the aligned and tilted Zemax configurations at the same field points."
+        ],
+        [
+          "Study the supporting structure",
+          "Design a three-hole lens mount and inspect its response to asymmetric loading in SolidWorks."
+        ]
+      ],
+      "analysis_text": [
+        "The spot-diagram screenshots report an on-axis image position of 0.000 mm in the aligned case and 2.651 mm after the 1° tilt. The off-axis image positions shift by a similar amount.",
+        "The displayed RMS and geometric radii are similar at the shown precision. The most clearly supported result is image-position sensitivity; these screenshots do not establish a quantified increase in spot size.",
+        "The separate SolidWorks static load case reports a maximum von Mises stress of approximately 0.277 MPa. No displacement-to-optical-model transfer is documented, so the 10 N load is not presented as a calibrated cause of the imposed 1° optical tilt."
+      ],
+      "analysis_diagram": "collimator",
+      "design": [
+        "The mount was modeled around a 25 mm lens, with a central bore and three bolt holes. The CAD figure shows the original model used in the study.",
+        "The mechanical boundary conditions fixed two bolt holes while loading the third, creating an asymmetric structural response for inspection."
+      ],
+      "build": [
+        "This was a simulation project. The supplied presentation documents Zemax comparisons, mount CAD, and a SolidWorks static stress result.",
+        "A next step would be to extract mount translations and rotations, transfer them into the optical model, and validate the relationship with a physical alignment test."
+      ],
+      "results": [
+        [
+          "1°",
+          "imposed optical tilt"
+        ],
+        [
+          "2.65 mm",
+          "reported image-position shift"
+        ],
+        [
+          "0.277 MPa",
+          "reported maximum von Mises stress"
+        ]
+      ],
+      "result_text": "The study connected optical alignment sensitivity with lens-mount design. It established separate optical and structural baselines for a future coupled analysis.",
+      "learning": "Optical performance and mechanical stress answer different questions. A low stress result alone does not establish acceptable alignment. A stronger next iteration would connect actual structural deformation to the optical model.",
+      "number": "06"
+    },
+    {
+      "slug": "reel-redesign",
+      "number": "07",
+      "company": "SORENSON ENGINEERING",
+      "category": "Mechanical Design / Manufacturing",
+      "title": "Manufacturing Reel Redesign",
+      "short": "A supply constraint becomes a design opportunity.",
+      "challenge": "Redesign a discontinued reel around manufacturing, assembly, and heat-treatment handling requirements.",
+      "tools": [
+        "Mechanical CAD",
+        "DFM / DFA",
+        "Carbon 3D printing"
+      ],
+      "disciplines": "Reverse engineering · Prototyping · Drawings",
+      "image": null,
+      "diagram": "reel",
+      "material": "Manufacturing reel components",
+      "analysis": "Assembly & process tradeoffs",
+      "testing": "Prototype evaluation",
+      "status": "Design & prototyping",
+      "date": "Jun–Sep 2024",
+      "role": "Engineering Intern / Stamping",
+      "metric": "8+",
+      "metric_label": "engineering drawings",
+      "problem": [
+        "A supplier discontinuation created the need to redesign a manufacturing reel. Replacing the geometry alone was not enough: the reel needed to work with assembly, handling, and heat-treatment operations.",
+        "I reverse-engineered the existing system and developed updated flanges, a hub, and a clip arrangement with the production process in mind."
+      ],
+      "requirements": [
+        [
+          "Replacement",
+          "Address the discontinued supplier component."
+        ],
+        [
+          "Assembly",
+          "Reconsider the use of permanent bolts."
+        ],
+        [
+          "Handling",
+          "Support stackability through heat treatment."
+        ],
+        [
+          "Manufacturability",
+          "Apply design-for-manufacturing considerations to the component set."
+        ],
+        [
+          "Documentation",
+          "Produce engineering drawings for the revised design."
+        ]
+      ],
+      "concepts": [
+        [
+          "Understand the existing assembly",
+          "Reverse-engineer the reel and identify the interfaces that are necessary to preserve."
+        ],
+        [
+          "Revise the component relationships",
+          "Develop flange, hub, and clip concepts, including dimples and stackability features, to improve assembly practicality."
+        ]
+      ],
+      "analysis_text": [
+        "The work focused on geometry, interfaces, manufacturing feasibility, and assembly sequence. The reel had to be considered within the process that used it.",
+        "Prototypes allowed the design to be examined physically before relying on the drawing package. No FEA result or quantified production improvement is claimed for this project."
+      ],
+      "analysis_diagram": "reel",
+      "design": [
+        "The redesigned reel included flanges, a hub, and a clip, with dimples and stackability considered as part of the component geometry.",
+        "Replacing permanent bolts required attention to how the parts would locate, connect, and be handled. The drawing package translated those decisions into a manufacturing definition."
+      ],
+      "build": [
+        "I used Carbon 3D-printed prototypes to support physical evaluation of the redesigned components and their assembly.",
+        "The project produced more than eight engineering drawings. Original supplier and company drawings are not reproduced on this site."
+      ],
+      "results": [
+        [
+          "8+",
+          "engineering drawings"
+        ],
+        [
+          "3",
+          "core component types"
+        ],
+        [
+          "3D",
+          "printed prototypes"
+        ]
+      ],
+      "result_text": "The work connected reverse engineering with a revised component architecture, physical prototypes, and a documented design package.",
+      "learning": "A replacement part is part of a process. Designing around assembly and heat-treatment handling helped me see manufacturability as an input from the beginning, not a check at the end.",
+      "sort_date": "2024-09",
+      "project_type": "Internship project"
+    },
+    {
+      "slug": "tesla-equipment",
+      "number": "08",
+      "company": "TESLA / SPARKS",
+      "category": "Equipment Engineering",
+      "title": "Manufacturing Equipment & Vision Inspection",
+      "short": "Make the hardware and the logic work together.",
+      "challenge": "Support production equipment through mechanical design, vision inspection, PLC logic, and robotics.",
+      "tools": [
+        "TIA Portal",
+        "ROBOGUIDE",
+        "Vision systems"
+      ],
+      "disciplines": "Equipment engineering · Automation · Controls",
+      "image": null,
+      "diagram": "automation",
+      "material": "Production equipment",
+      "analysis": "Controls & integration",
+      "testing": "Equipment-level checks",
+      "status": "Internship work",
+      "date": "Aug–Dec 2023",
+      "role": "Manufacturing Equipment Engineering Intern",
+      "metric": "~93%",
+      "metric_label": "vision accuracy in reported trial",
+      "problem": [
+        "During my equipment engineering internship in Sparks, I supported production equipment through mechanical design, PLC logic, robotics tools, and vision sensing.",
+        "My work included CAD, TIA Portal, ROBOGUIDE, and a Keyence IV2 vision-sensor application. The goal was to connect hardware changes with predictable equipment behavior."
+      ],
+      "requirements": [
+        [
+          "Integration",
+          "Connect mechanical design, controls, and sensing."
+        ],
+        [
+          "Operation",
+          "Consider production use and operator interaction."
+        ],
+        [
+          "Automation",
+          "Use PLC and robotics tools for equipment support."
+        ],
+        [
+          "Inspection",
+          "Evaluate the vision setup in its actual lighting conditions."
+        ],
+        [
+          "Verification",
+          "Check equipment behavior after a change."
+        ]
+      ],
+      "concepts": [
+        [
+          "Begin with the equipment",
+          "Understand the mechanical arrangement, sensing, and operating sequence before changing the logic."
+        ],
+        [
+          "Treat sensing as a system",
+          "Evaluate the vision sensor together with lighting and setup, rather than treating the camera as an isolated component."
+        ]
+      ],
+      "analysis_text": [
+        "The work involved TIA Portal ladder logic, CAD, and ROBOGUIDE, with an IV2 vision-sensor application that included lighting changes.",
+        "A reported trial achieved approximately 93% vision accuracy. The figure is specific to that trial and is not presented as a production-wide inspection guarantee."
+      ],
+      "analysis_diagram": "automation",
+      "design": [
+        "Equipment work included a suction-cup and actuator design for robotic handling, PLC mass checks at three-second intervals, and a vision-sensor application.",
+        "Mechanical layout, sensing, lighting, and the operating sequence were considered together during equipment support."
+      ],
+      "build": [
+        "Equipment-level evaluation included vision-sensor and lighting checks. A pulse-tester board replacement was followed by a 24-hour pass.",
+        "These results describe separate equipment-support tasks completed during the 2023 internship."
+      ],
+      "results": [
+        [
+          "~93%",
+          "vision accuracy in reported trial"
+        ],
+        [
+          "3 s",
+          "PLC mass-check interval"
+        ],
+        [
+          "24 h",
+          "pulse-tester pass"
+        ]
+      ],
+      "result_text": "The experience built a practical connection between mechanical equipment and the controls that operate it, with verification tied to the particular task.",
+      "learning": "Reliable automation depends on the interfaces. Lighting affects sensing, mechanical behavior affects sequencing, and operator needs affect how a control system should be presented.",
+      "sort_date": "2023-12",
+      "project_type": "Internship project"
+    },
+    {
+      "slug": "outseam-flare-jeans",
+      "company": "PERSONAL / SOFTGOODS",
+      "category": "Upcycling / Pattern & Construction",
+      "title": "Outseam-Panel Flared Jeans",
+      "short": "Reshape the lower leg by inserting reclaimed denim panels into the outseams while retaining the existing waist and upper fit.",
+      "challenge": "Reshape the lower leg by inserting reclaimed denim panels into the outseams while retaining the existing waist and upper fit.",
+      "tools": [
+        "Pattern drafting",
+        "Sewing",
+        "Denim reuse"
+      ],
+      "disciplines": "Softgoods design / Pattern development / Prototyping",
+      "image": "softgoods-4",
+      "image_alt": "Outseam-Panel Flared Jeans completed garment",
+      "image_width": 709,
+      "image_height": 1536,
+      "photo": true,
+      "gallery": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "material": "Reclaimed denim",
+      "analysis": "Pattern geometry and fit",
+      "testing": "Garment fit / functional use",
+      "status": "Completed",
+      "date": "2024–2025",
+      "sort_date": null,
+      "date_note": "Exact completion month was not recorded.",
+      "role": "Designer & Maker",
+      "project_type": "Personal project",
+      "metric": "0.5 in",
+      "metric_label": "confirmed seam allowance",
+      "analysis_diagram": "softgoods",
+      "media_caption": "Original project photograph supplied by Rafael.",
+      "softgoods_kind": "outseam",
+      "problem": [
+        "I wanted a more pronounced flared silhouette while keeping the original waist and upper fit of an existing pair of jeans.",
+        "I added denim to the outseams, using reclaimed material and a triangular panel approach to increase the lower-leg opening."
+      ],
+      "requirements": [
+        [
+          "Fit",
+          "Retain the existing approximately 28 × 30 base garment."
+        ],
+        [
+          "Panel placement",
+          "One added outseam panel per leg."
+        ],
+        [
+          "Seam allowance",
+          "0.5 in, confirmed."
+        ],
+        [
+          "Finish",
+          "Create a matched flared silhouette across both legs."
+        ]
+      ],
+      "concepts": [
+        [
+          "Draft the panel",
+          "Use a cardboard template to explore the triangle geometry and transfer a matched shape onto donor denim."
+        ],
+        [
+          "Fit the added volume",
+          "Open the outseam and position each insert so the added width grows toward the hem."
+        ]
+      ],
+      "analysis_text": [
+        "The original dimensions were not recorded. The following is an illustrative pattern reconstruction for roughly 28 × 30 men’s jeans, not a measurement of the photographed garment. The 0.5-inch seam allowance is confirmed by Rafael.",
+        "Example finished geometry: a 16 in insert height and 6 in width at the hem seam line. Starting from a hypothetical 7.5 in laid-flat hem width (15 in circumference), one 6 in insert per leg would give approximately 10.5 in laid-flat width (21 in circumference).",
+        "For a symmetric triangle, offset each sloping stitch line outward by 0.5 in and add 0.5 in at the hem. A mitered offset of this illustrative triangle is about 7.21 in wide by 19.21 in high at the cut outline; the sharp tip can be truncated for construction. This is an example pattern, not recovered historical cutting dimensions."
+      ],
+      "design": [
+        "The triangular insert introduces additional width gradually, concentrating the silhouette change at the lower leg.",
+        "I used the existing garment as the base and donor denim for the inserts, with a 0.5-inch allowance for joining the panels."
+      ],
+      "build": [
+        "The photos show material planning, a cardboard template, the laid-flat assembly, and the finished jeans worn.",
+        "The final wear photo documents the resulting flare. Original before-and-after hem measurements were not recorded."
+      ],
+      "results": [
+        [
+          "2",
+          "outseam inserts, one per leg"
+        ],
+        [
+          "0.5 in",
+          "confirmed seam allowance"
+        ],
+        [
+          "Retained",
+          "original waist and upper fit"
+        ]
+      ],
+      "result_text": "The jeans gained a flared lower-leg silhouette through added outseam panels. The photographs document the completed garment.",
+      "learning": "Panel shape controls where volume appears. Working from a base garment made it important to balance the two legs and evaluate the drape in wear, not just on the floor.",
+      "number": "09"
+    },
+    {
+      "slug": "inseam-flare-jeans",
+      "company": "PERSONAL / SOFTGOODS",
+      "category": "Upcycling / Pattern & Construction",
+      "title": "Inseam-Panel Flared Jeans",
+      "short": "Add volume through the inseams to create a wider lower-leg silhouette while preserving the outside seam line.",
+      "challenge": "Add volume through the inseams to create a wider lower-leg silhouette while preserving the outside seam line.",
+      "tools": [
+        "Pattern drafting",
+        "Sewing",
+        "Denim reuse"
+      ],
+      "disciplines": "Softgoods design / Pattern development / Prototyping",
+      "image": "softgoods-7",
+      "image_alt": "Inseam-Panel Flared Jeans completed garment",
+      "image_width": 709,
+      "image_height": 1536,
+      "photo": true,
+      "gallery": [
+        5,
+        6,
+        7
+      ],
+      "material": "Reclaimed denim",
+      "analysis": "Pattern geometry and fit",
+      "testing": "Garment fit / functional use",
+      "status": "Completed",
+      "date": "2024–2025",
+      "sort_date": null,
+      "date_note": "Exact completion month was not recorded.",
+      "role": "Designer & Maker",
+      "project_type": "Personal project",
+      "metric": "0.5 in",
+      "metric_label": "confirmed seam allowance",
+      "analysis_diagram": "softgoods",
+      "media_caption": "Original project photograph supplied by Rafael.",
+      "softgoods_kind": "inseam",
+      "problem": [
+        "For this pair, I added material at the inseams instead of the outseams to change where the lower-leg volume developed.",
+        "The goal was to widen the silhouette using donor denim while keeping the existing upper garment."
+      ],
+      "requirements": [
+        [
+          "Base garment",
+          "Reuse an existing pair of jeans."
+        ],
+        [
+          "Panel placement",
+          "One inseam insert per leg."
+        ],
+        [
+          "Seam allowance",
+          "0.5 in, confirmed."
+        ],
+        [
+          "Fit",
+          "Balance the added width between the legs."
+        ]
+      ],
+      "concepts": [
+        [
+          "Compare the base silhouette",
+          "Lay out the original garment to identify where the inseam should be opened."
+        ],
+        [
+          "Introduce tapered volume",
+          "Use triangular inserts to transition from the original leg into a wider hem."
+        ]
+      ],
+      "analysis_text": [
+        "The original dimensions were not recorded. The following is an illustrative pattern reconstruction for roughly 28 × 30 men’s jeans, not a measurement of the photographed garment. The 0.5-inch seam allowance is confirmed by Rafael.",
+        "Example finished geometry: a 14 in insert height with a 4 in hem width at the stitch line. From a hypothetical 8 in laid-flat opening (16 in circumference), adding one 4 in panel per leg would produce approximately 10 in laid-flat width (20 in circumference).",
+        "Offset the two sloping stitch lines and hem by the confirmed 0.5 in seam allowance. A mitered offset of this illustrative triangle is approximately 5.15 in wide by 18.04 in high at the cut outline; truncate the needle-like tip as needed. These example values do not describe measured before-and-after results."
+      ],
+      "design": [
+        "The inseam panel increases the available fabric toward the hem while retaining the garment’s outside seam.",
+        "Matching the two inserts helps the added volume read consistently when the jeans are worn."
+      ],
+      "build": [
+        "The photographs show the original silhouette, the opened inseams with insert material positioned, and the finished jeans.",
+        "The original dimensions were not recorded, so the case study separates photographic evidence from illustrative pattern dimensions."
+      ],
+      "results": [
+        [
+          "2",
+          "inseam inserts, one per leg"
+        ],
+        [
+          "0.5 in",
+          "confirmed seam allowance"
+        ],
+        [
+          "Reused",
+          "base garment and donor denim"
+        ]
+      ],
+      "result_text": "The finished jeans show a wider lower-leg silhouette created through inseam inserts.",
+      "learning": "Moving an insert from the outseam to the inseam changes the way added fabric is distributed. Comparing both approaches helped me think about silhouette as a pattern-design problem.",
+      "number": "10"
+    },
+    {
+      "slug": "denim-utility-tote",
+      "company": "PERSONAL / SOFTGOODS",
+      "category": "Upcycling / Pattern & Construction",
+      "title": "Denim Utility Tote",
+      "short": "Turn a pair of jeans into a usable tote while keeping the original pockets as functional storage.",
+      "challenge": "Turn a pair of jeans into a usable tote while keeping the original pockets as functional storage.",
+      "tools": [
+        "Pattern drafting",
+        "Sewing",
+        "Denim reuse"
+      ],
+      "disciplines": "Softgoods design / Pattern development / Prototyping",
+      "image": "softgoods-9",
+      "image_alt": "Denim Utility Tote completed garment",
+      "image_width": 709,
+      "image_height": 1536,
+      "photo": true,
+      "gallery": [
+        8,
+        9
+      ],
+      "material": "Reclaimed denim",
+      "analysis": "Pattern geometry and fit",
+      "testing": "Garment fit / functional use",
+      "status": "Completed",
+      "date": "2024–2025",
+      "sort_date": null,
+      "date_note": "Exact completion month was not recorded.",
+      "role": "Designer & Maker",
+      "project_type": "Personal project",
+      "metric": "Retained",
+      "metric_label": "original pocket utility",
+      "analysis_diagram": "softgoods",
+      "media_caption": "Original project photograph supplied by Rafael.",
+      "softgoods_kind": "tote",
+      "problem": [
+        "I wanted to turn an existing pair of jeans into a practical bag while keeping the useful details already built into the garment.",
+        "The waistband, belt loops, and original pockets became part of the tote’s design rather than discarded material."
+      ],
+      "requirements": [
+        [
+          "Reuse",
+          "Use the jeans as the primary material source."
+        ],
+        [
+          "Utility",
+          "Retain the original pockets for storage."
+        ],
+        [
+          "Carry",
+          "Add handles for normal tote use."
+        ],
+        [
+          "Finish",
+          "Close and shape the lower edge into a usable bag body."
+        ]
+      ],
+      "concepts": [
+        [
+          "Preserve useful features",
+          "Keep the original pocket arrangement and upper-garment details."
+        ],
+        [
+          "Reassign the material",
+          "Use the remaining denim to form the tote body and carry handles."
+        ]
+      ],
+      "analysis_text": [
+        "The design problem was primarily one of layout and construction: retain accessible pockets, form a usable opening, and connect the handles to the bag body.",
+        "The photographs show the completed tote from both sides. No capacity, dimensions, or load-test result was recorded, so those values are not claimed."
+      ],
+      "design": [
+        "The finished tote keeps the recognizable waistband, belt loops, denim seams, and original pockets.",
+        "The carry straps turn the repurposed garment into a bag while the existing pockets add organized storage."
+      ],
+      "build": [
+        "I cut and sewed the jeans into a tote and retained the original pockets for utility.",
+        "Both supplied images document the finished bag, showing the two sides and handles."
+      ],
+      "results": [
+        [
+          "Reused",
+          "denim garment"
+        ],
+        [
+          "Retained",
+          "original pockets"
+        ],
+        [
+          "2",
+          "carry handles"
+        ]
+      ],
+      "result_text": "A pair of jeans became a usable tote with its original pockets preserved for utility.",
+      "learning": "Upcycling works best when existing features become part of the design. Keeping the pockets preserved both function and the character of the original garment.",
+      "number": "11"
+    }
+  ],
+  "experiences": [
+    [
+      "NIKE",
+      "nike",
+      "JUN–AUG 2026",
+      "Footwear Product Creation Intern",
+      "FEA / Product Performance Engineering · Beaverton, OR",
+      "Built a simulation-driven foam performance library connecting nonlinear Abaqus models, mechanical testing, and product decisions.",
+      [
+        "70+ simulations",
+        "22 test curves",
+        "11 materials"
+      ],
+      "midsole-simulation"
+    ],
+    [
+      "TESLA",
+      "tesla",
+      "SEP–DEC 2025",
+      "Manufacturing Controls Engineering Intern",
+      "Paints & Coatings · Austin, TX",
+      "Standardized HMI interfaces, developed crane-position display logic, and supported production controls integration.",
+      [
+        "15 PLCs",
+        "130+ HMIs",
+        "Structured Text"
+      ],
+      "tesla-controls"
+    ],
+    [
+      "NASA JPL",
+      "jpl",
+      "JUN–AUG 2025",
+      "Opto-Mechanical Engineering Intern",
+      "Precision hardware / Ground support equipment · Pasadena, CA",
+      "Designed and analyzed precision hardware, studied flexure and mechanism concepts, and supported optical alignment and drawing definition.",
+      [
+        "Siemens NX",
+        "NX Nastran",
+        "ISO 10110"
+      ],
+      "scan-mirror-gse"
+    ],
+    [
+      "SORENSON",
+      "sorenson",
+      "JUN–SEP 2024",
+      "Engineering Intern",
+      "Mechanical Design / Stamping · Yucaipa, CA",
+      "Reverse-engineered manufacturing components, built prototypes, and produced an engineering drawing package.",
+      [
+        "DFM / DFA",
+        "Prototyping",
+        "8+ drawings"
+      ],
+      "reel-redesign"
+    ],
+    [
+      "TESLA",
+      "tesla",
+      "AUG–DEC 2023",
+      "Manufacturing Equipment Engineering Intern",
+      "Material Handling Support · Sparks, NV",
+      "Supported manufacturing equipment through mechanical design, PLC checks, robotics tools, and vision inspection.",
+      [
+        "TIA Portal",
+        "ROBOGUIDE",
+        "Vision systems"
+      ],
+      "tesla-equipment"
+    ]
+  ],
+  "capabilities": [
+    [
+      "Design",
+      [
+        "Siemens NX",
+        "SolidWorks",
+        "Autodesk Inventor",
+        "GD&T",
+        "DFM / DFA",
+        "Mechanical Design"
+      ]
+    ],
+    [
+      "Simulation",
+      [
+        "Abaqus",
+        "NX Nastran",
+        "Finite Element Analysis",
+        "Structural Analysis",
+        "Nonlinear Analysis",
+        "Zemax OpticStudio"
+      ]
+    ],
+    [
+      "Testing",
+      [
+        "Mechanical Testing",
+        "DOE",
+        "Validation",
+        "Data Analysis"
+      ]
+    ],
+    [
+      "Manufacturing",
+      [
+        "Automation",
+        "PLC",
+        "Robotics",
+        "Prototyping",
+        "Manufacturing Engineering"
+      ]
+    ],
+    [
+      "Programming / Controls",
+      [
+        "MATLAB",
+        "Python",
+        "Arduino",
+        "PLC Ladder Logic",
+        "Embedded Controls"
+      ]
+    ],
+    [
+      "Optomechanical",
+      [
+        "Precision Alignment",
+        "Tolerance Analysis",
+        "ISO 10110",
+        "Optical Mounting",
+        "Kinematic Constraint"
+      ]
+    ]
+  ]
+}
